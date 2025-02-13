@@ -7,19 +7,20 @@ npx @vue/cli create my-project --preset vue-next #4устанавливает п
 devServer: {
     port: 3000, // Устанавливаем нужный порт
 },
-# последние версии зависимостей на 10.02.2025
-#   "dependencies": {
-#     "core-js": "^3.30.0",
-#     "vue": "^3.3.0"
-#   },
-#   "devDependencies": {
-#     "@babel/core": "^7.21.0",
-#     "@babel/eslint-parser": "^7.21.0",
-#     "@vue/cli-plugin-babel": "^5.0.0",
-#     "@vue/cli-plugin-eslint": "^5.0.0",
-#     "@vue/cli-service": "^5.0.0",
-#     "eslint": "^8.0.0",
-#     "eslint-plugin-vue": "^9.0.0"
-#   },
-npm install lightweight-charts
+> последние версии зависимостей на 10.02.2025
+    "dependencies": {
+      "core-js": "^3.30.0",
+      "vue": "^3.3.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.21.0",
+      "@babel/eslint-parser": "^7.21.0",
+      "@vue/cli-plugin-babel": "^5.0.0",
+      "@vue/cli-plugin-eslint": "^5.0.0",
+      "@vue/cli-service": "^5.0.0",
+      "eslint": "^8.0.0",
+      "eslint-plugin-vue": "^9.0.0"
+    },
+npm install lightweight-charts # загружаем библиотеку графиков 
+npm install axios # загружаем библиотеку для HTTP-запросов
 npm run serve
