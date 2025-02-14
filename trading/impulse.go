@@ -75,7 +75,9 @@ func ta_tr(high, low, close float64) float64 {
 	return max(math.Abs(high-low), math.Abs(high-close), math.Abs(low-close))
 }
 
-func computeImpulse(barChart []Candle) error {
+func computeImpulse(barChart []Candle) []int {
+	result := make([]int, len(barChart))
+
 	shortWindow := 10 / 2
 	mediumWindow := 30 / 2
 	shortMult := 1
@@ -118,19 +120,25 @@ func computeImpulse(barChart []Candle) error {
 
 		if oshort > 0.5 {
 			if oshort > 1.0 {
-				barChart[i].Impulse = 2
+				barChart[i].Impulse = 2 //lime
+				result[i] = 2
 			} else if oshort > omed {
-				barChart[i].Impulse = 1
+				barChart[i].Impulse = 1 //green
+				result[i] = 1
 			} else {
-				barChart[i].Impulse = 0
+				barChart[i].Impulse = 0 //white
+				result[i] = 0
 			}
 		} else if oshort < 0 {
-			barChart[i].Impulse = -2
+			barChart[i].Impulse = -2 //red
+			result[i] = -2
 		} else if oshort < omed {
-			barChart[i].Impulse = -1
+			barChart[i].Impulse = -1 //borrow
+			result[i] = -1
 		} else {
-			barChart[i].Impulse = 0
+			barChart[i].Impulse = 0 //white
+			result[i] = 0
 		}
 	}
-	return nil
+	return result
 }

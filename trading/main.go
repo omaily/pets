@@ -9,13 +9,14 @@ import (
 )
 
 type Candle struct {
-	Time    int64   `json:"time"`
-	Open    float64 `json:"open"`
-	High    float64 `json:"high"`
-	Low     float64 `json:"low"`
-	Close   float64 `json:"close"`
-	T3      float64 `json:"t3"`
-	Impulse int     `json:"impulse"`
+	Time       int64   `json:"time"`
+	Open       float64 `json:"open"`
+	High       float64 `json:"high"`
+	Low        float64 `json:"low"`
+	Close      float64 `json:"close"`
+	T3         float64 `json:"t3"`
+	Impulse    int     `json:"impulse"`
+	ImpulseStr string  `json:"default"`
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
